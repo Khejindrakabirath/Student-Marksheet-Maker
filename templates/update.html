@@ -1,0 +1,154 @@
+<!DOCTYPE html> {%load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+    <style>
+        /* * {
+            margin-top: 0;
+            margin-bottom: 0;
+        } */
+        
+        .body-container {
+            background: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+         :root {
+            --orange: #ffa500;
+        }
+        
+        .submit {
+            display: inline-block;
+            margin-top: -1rem;
+            cursor: pointer;
+            background: #32cd32;
+            border: 2px solid #32cd32;
+            color: #fff;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            padding: -0.2rem 3rem;
+        }
+        
+        .submit:hover {
+            color: #000000;
+            background: #76ff7a;
+        }
+        /* body {
+            background: #f5f5dc;
+        } */
+        
+        *::selection {
+            color: #000000;
+            background-color: var(--orange);
+        }
+        
+        .container {
+            width: 100%;
+            height: 4rem;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #14213d;
+            content: inherit;
+        }
+        
+        .text span {
+            font-size: 2.5rem;
+            padding: 0 .7rem;
+            text-transform: uppercase;
+            color: #fff;
+            animation: zoomup 4.4s linear infinite;
+            animation-delay: calc(300ms * var(--i));
+        }
+        
+        @keyframes zoomup {
+            0%,
+            100% {
+                color: #00c2ba;
+                filter: blur(1px);
+                text-shadow: 0 0 10px #00c2ba, 0 0 20px #00c2ba, 0 0 30px #00c2ba, 0 0 40px #00c2ba, 0 0 60px #00c2ba, 0 0 80px #00c2ba, 0 0 100px #00c2ba, 0 0 120px #00c2ba;
+            }
+            5%,
+            95% {
+                filter: blur(0);
+                color: #fff;
+                text-shadow: none;
+            }
+        }
+        
+        .btn {
+            display: inline-block;
+            margin-top: -1rem;
+            background: var(--orange);
+            color: #fff;
+            padding: -0.2rem 3rem;
+            border: .2rem solid var(--orange);
+            cursor: pointer;
+            font-size: 1.1rem;
+            text-decoration: none;
+            box-shadow: 2px 2px 3px var(--orange);
+        }
+        
+        .btn:hover {
+            background: rgba(255, 165, 0, .2);
+            color: var(--orange);
+        }
+        
+        #form {
+            /* flex: 1 1 50rem; */
+            padding: 4rem;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+            border-radius: 10%;
+            margin: 19rem;
+            margin-top: 0;
+        }
+        
+        p {
+            font-size: 1.3rem;
+        }
+        
+        body {
+            overflow: hidden;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body-container" style=" background-image:url('{%static 'images/p1.webp' %}'); ">
+        <div class="container">
+            <div class="text">
+                <span style="--i:1">u</span>
+                <span style="--i:2">p</span>
+                <span style="--i:3">d</span>
+                <span style="--i:4">a</span>
+                <span style="--i:5">t</span>
+                <span style="--i:6">e</span>
+                <span style="--i:7">-</span>
+                <span style="--i:8">s</span>
+                <span style="--i:9">e</span>
+                <span style="--i:10">c</span>
+                <span style="--i:11">t</span>
+                <span style="--i:12">i</span>
+                <span style="--i:13">o</span>
+                <span style="--i:14">n</span>
+
+
+            </div>
+        </div>
+        <form method="POST" id="form">
+            {% csrf_token %} {{addforms.as_p}}
+            <button type="submit" class="submit">Submit</button><br><br>
+            <a href="/"><button class="btn">GO TO HOMEPAGE</button></a><br><br>
+        </form>
+
+    </div>
+</body>
+
+</html>

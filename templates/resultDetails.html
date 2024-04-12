@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="h"><b><i>SUKUNA SECONDARY SCHOOL</i></b></p>
+    <p><b> Sundarharaincha-10,morang</b></p>
+    <br>
+    <h3>FINAL EAXM RESULT-2022</h3>
+    <div id="wrapper">
+        <span>Class: 9</span> {% for mark in model %}
+        <span>Roll.No.: {{mark.id}}</span> {% endfor %}
+        <span>Date: <p id="demo"></p></span>
+    </div>
+    {% for mark in model %}
+    <span id="name">Name: {{mark.student_Name}}</span> {% endfor %}
+    <br>
+    <hr>
+    <br>
+    <table id="resultDetails" border="2px solid black">
+
+        <tr>
+            <th>Subject</th>
+            <th>FullMark</th>
+            <th>PassMark</th>
+            <th>ObtainedMark</th>
+            <th>Remarks</th>
+        </tr>
+
+        <tr>
+            <th>English</th>
+            <td>100</td>
+            <td>40</td>
+            {% for mark in model %}
+            <td>{{mark.engMark}}</td>
+            <td>{{mark.engRemarks}}</td>
+            {% endfor %}
+
+        </tr>
+        <tr>
+            <th>Math</th>
+            <td>100</td>
+            <td>40</td>
+            {% for mark in model %}
+            <td>{{mark.mathMark}}</td>
+            <td>{{mark.mathRemarks}}</td>
+            {% endfor %}
+
+        </tr>
+        <tr>
+            <th>Science</th>
+            <td>100</td>
+            <td>40</td>
+            {% for mark in model %}
+            <td>{{mark.sciMark}}</td>
+            <td>{{mark.sciRemarks}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>Social</th>
+            <td>100</td>
+            <td>40</td>
+            {% for mark in model %}
+            <td>{{mark.socMark}}</td>
+            <td>{{mark.socRemarks}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>Nepali</th>
+            <td>100</td>
+            <td>40</td>
+            {% for mark in model %}
+            <td>{{mark.nepMark}}</td>
+            <td>{{mark.nepRemarks}}</td>
+            {% endfor %}
+
+        </tr>
+        <tr>
+            <th>Health</th>
+            <td>100</td>
+            <td>40</td>
+            {% for mark in model %}
+            <td>{{mark.heaMark}}</td>
+            <td>{{mark.heaRemarks}}</td>
+            {% endfor %}
+
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td>600</td>
+            <td>240</td>
+            {% for mark in model %}
+            <td>{{mark.total}}</td>
+            <td>{{mark.Remarks}}</td>
+            {% endfor %}
+        </tr>
+
+    </table>
+    {% for mark in model %}
+    <span style="display: block; margin-left: 190px; padding-top: 10px;">Percentage: {{mark.percent}}%</span>
+    <span style="display: block; margin-left: 190px; padding-top: 10px;">Remarks: {{mark.Remarks}}</span> {% endfor %}
+    <br>
+    <a href="/"><button class="btn">GO TO HOMEPAGE</button></a>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            margin-top: -1rem;
+            background: var(--orange);
+            color: #fff;
+            padding: -0.2rem 3rem;
+            border: .2rem solid var(--orange);
+            cursor: pointer;
+            font-size: 1.1rem;
+            text-decoration: none;
+            box-shadow: 2px 2px 3px var(--orange);
+            margin: 0 145px;
+        }
+        
+        .btn:hover {
+            background: rgba(255, 165, 0, .2);
+            color: black;
+        }
+        
+         :root {
+            --orange: #ffa500;
+        }
+        
+        body {
+            background: #ffffe0;
+        }
+        
+        *::selection {
+            background-color: var(--orange);
+        }
+        
+        .h {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            text-align: center;
+        }
+        
+        h3 {
+            text-align: center;
+            text-decoration: underline;
+        }
+        
+        a {
+            text-decoration: none;
+            font-size: 17px;
+            color: black;
+        }
+        
+        #wrapper {
+            margin-top: 21px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        #name {
+            margin-left: 188px;
+            position: relative;
+            margin-top: 18px;
+            display: inline-block;
+        }
+        
+        #resultDetails {
+            width: 1000px;
+            height: 280px;
+            margin-left: 150px;
+            border-collapse: collapse;
+        }
+        
+        tr th {
+            width: 150px;
+        }
+        
+        tr td {
+            text-align: center;
+        }
+        
+        #demo {
+            position: absolute;
+            margin-top: -18px;
+            margin-left: 50px;
+        }
+    </style>
+    <script>
+        var dateObj = new Date();
+        var month = dateObj.getUTCMonth() + 1;
+        var day = dateObj.getUTCDate();
+        var year = dateObj.getUTCFullYear();
+
+        newdate = year + "/" + month + "/" + day;
+        document.getElementById("demo").innerHTML = newdate;
+    </script>
+</body>
+
+</html>
